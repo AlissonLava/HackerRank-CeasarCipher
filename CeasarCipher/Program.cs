@@ -22,12 +22,19 @@ class Result
      * The function accepts following parameters:
      *  1. STRING s
      *  2. INTEGER k
+     *  
+     *  https://www.hackerrank.com/challenges/one-month-preparation-kit-caesar-cipher-1
      */
 
     public static string caesarCipher(string s, int k)
     {
 
         string alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        while (k >= alphabet.Length)        {
+            k -= alphabet.Length;
+        }
+
         string rotatedAlphabet = alphabet.Substring(k, alphabet.Length - k) + alphabet.Substring(0, k);
         string result = "";
 
